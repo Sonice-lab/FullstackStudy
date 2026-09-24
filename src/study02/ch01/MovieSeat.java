@@ -64,6 +64,8 @@ public class MovieSeat {
         //Scanner 불러오기
         Scanner scanner = new Scanner(System.in);
 
+        boolean found = false;
+
         // 3. 좌석은 Seat[] 배열에 저장
         // 최대 10개의 좌석을 관리할 수 있는 배열 생성
         Seat[] seats = new Seat[10];
@@ -107,7 +109,7 @@ public class MovieSeat {
                 System.out.println("예약할 좌석 번호를 입력하세요. (예:A1): ");
                 String targetSeat = scanner.nextLine();
                 //좌석을 찾았는지 확인하기 위한 플래그 변수
-                boolean found = false;
+//                boolean found = false;
 
                 for (int i = 0; i < seats.length; i++) {
                     // 좌석이 존재하고, 입력한 번호와 현재 좌석의 번호가 일치하는 지 확인
@@ -135,7 +137,7 @@ public class MovieSeat {
                 //3. 예약 취소 - UPDATE(예약 상태 변경)
                 System.out.println("예약 취소할 좌석 번호를 입력하세요: ");
                 String targetSeat = scanner.nextLine();
-                boolean found = false;
+//                boolean found = false;
 
                 for (int i = 0; i < seats.length; i++) {
                     if (seats[i] != null && seats[i].getSeatNumber().equals(targetSeat)) {
@@ -158,7 +160,7 @@ public class MovieSeat {
                 //4. 좌석 정보 수정 - UPDATE (좌석 번호 자체를 변경)
                 System.out.println("수정할 기존 좌석 번호를 입력하세요.: ");
                 String oldSeat = scanner.nextLine();
-                boolean found = false;
+//                //boolean found = false;
 
                 for (int i = 0; i < seats.length; i++) {
                     // 현재 확인 중인 자리가 빈자리가 아니면서,
@@ -184,7 +186,7 @@ public class MovieSeat {
                 // 5. 좌석 삭제 - DELETE(배열에서 해당 객체를 삭제)
                 System.out.println("삭제할 좌석 번호를 입력하세요.");
                 String targetSeat = scanner.nextLine();
-                boolean found = false;
+                //boolean found = false;
 
                 for (int i = 0; i < seats.length; i++) {
                     if (seats[i] != null && seats[i].getSeatNumber().equals(targetSeat)) {
